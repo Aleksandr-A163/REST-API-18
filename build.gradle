@@ -44,3 +44,16 @@ tasks.withType(Test) {
         }
     }
 }
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+task book(type: Test) {
+    useJUnitPlatform {
+        includeTags("book")
+    }
+}

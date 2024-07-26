@@ -4,11 +4,14 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import models.LoginResponseModel;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProfilePage;
 import tests.steps.BookStoreSteps;
 import helpers.FakerData;
 
+
+@Tag("book")
 @DisplayName("Tests for Book Store Application")
 public class BooksStoreTests extends TestBase {
 
