@@ -1,28 +1,27 @@
 package tests;
 
-import org.junit.jupiter.api.DisplayName;
-import models.*;
-import org.junit.jupiter.api.Test;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import models.LoginResponseModel;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import pages.ProfilePage;
 import tests.steps.BookStoreSteps;
-import com.github.javafaker.Faker;
+import helpers.FakerData;
 
-
+@DisplayName("Tests for Book Store Application")
 public class BooksStoreTests extends TestBase {
 
     private final ProfilePage profilePage = new ProfilePage();
 
     @Test
     @DisplayName("Delete a book from user profile")
-    void deleteBookFromBasketWithStepsAnnotationTest() {
+    void deleteBookFromProfileBooksListTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         BookStoreSteps step = new BookStoreSteps();
-        Faker faker = new Faker();
-        String userName = faker.name().username();
-        String password = faker.internet().password(8, 10, true, true, true);
-        String isbn = "9781449325862";
+        String userName = FakerData.generateUsername();
+        String password = FakerData.generatePassword(9, 14);
+        String isbn = "9781593275846";
         step.userRegistrationApi(userName, password);
         step.getTokenApi(userName, password);
         LoginResponseModel loginResponse = step.loginUserApi(userName, password);
@@ -33,6 +32,5 @@ public class BooksStoreTests extends TestBase {
             .checkBookIsInProfile(isbn)
             .deleteBook()
             .checkBooksListIsEmpty();
-
     }
 }

@@ -24,7 +24,7 @@ public class ProfilePage {
     @Step("Open profile page")
     public ProfilePage openProfilePage() {
         open("/profile");
-        bookRow.shouldHave(text("Learning JavaScript Design Patterns"));
+        bookRow.shouldHave(text("Eloquent JavaScript, Second Edition"));
         return this;
     }
 
