@@ -41,4 +41,10 @@ public class ProfilePage {
         Selenide.confirm();
         return this;
     }
+
+    @Step("Check the book list is empty")
+    public ProfilePage checkBooksListIsEmpty() {
+        noRowsFoundLabel.shouldHave(text("No rows found"));
+        return this;
+    }
 }
