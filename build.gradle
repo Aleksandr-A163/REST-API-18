@@ -4,16 +4,6 @@ plugins {
     id "io.freefair.lombok" version "8.6"
 }
 
-repositories {
-    mavenCentral()
-}
-
-def selenideVersion = "7.3.1",
-    restAssuredVersion = "5.4.0",
-    jUnitVersion = "5.10.2",
-    assertJVersion = "3.26.0",
-    allureVersion = "2.27.0"
-
 allure {
     report {
         version.set("2.27.0")
@@ -28,6 +18,18 @@ allure {
         }
     }
 }
+
+repositories {
+    mavenCentral()
+}
+
+def selenideVersion = "7.2.3",
+    restAssuredVersion = "5.4.0",
+    jUnitVersion = "5.10.2",
+    assertJVersion = "3.26.0",
+    allureVersion = "2.27.0"
+
+
 
 dependencies {
     testImplementation(

@@ -24,12 +24,12 @@ public class RequestResponseSpecs {
             .header("Authorization", "Bearer " + token);
     }
 
-    public static ResponseSpecification loginResponseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification loginResponseSpec200 = new ResponseSpecBuilder()
             .expectStatusCode(200)
             .log(ALL)
             .build();
 
-    public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
+    public static ResponseSpecification responseSpec201 = new ResponseSpecBuilder()
            .expectStatusCode(201)
            .log(ALL)
            .build();

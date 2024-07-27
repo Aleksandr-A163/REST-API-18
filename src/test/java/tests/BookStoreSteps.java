@@ -1,4 +1,4 @@
-package tests.api;
+package tests;
 
 import io.qameta.allure.Step;
 import models.*;
@@ -22,7 +22,7 @@ public class BookStoreSteps {
                     .when()
                     .post("/Account/v1/User")
                     .then()
-                    .spec(responseSpec)
+                    .spec(responseSpec201)
                     .extract().as(RegistrationResponseModel.class);
         }
 
@@ -36,7 +36,7 @@ public class BookStoreSteps {
                 .when()
                 .post("Account/v1/GenerateToken")
                 .then()
-                .spec(loginResponseSpec)
+                .spec(loginResponseSpec200)
                 .extract().response();
     }
 
@@ -50,7 +50,7 @@ public class BookStoreSteps {
                 .when()
                 .post("Account/v1/Login")
                 .then()
-                .spec(loginResponseSpec)
+                .spec(loginResponseSpec200)
                 .extract().as(LoginResponseModel.class));
     }
 
@@ -66,7 +66,7 @@ public class BookStoreSteps {
                 .when()
                 .post("BookStore/v1/Books")
                 .then()
-                .spec(responseSpec);
+                .spec(responseSpec201);
     }
 
     @Step("Set authorization cookies")

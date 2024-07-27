@@ -37,7 +37,6 @@ public class TestBase {
     @AfterEach
     void addAttachments() {
         Attachments.screenshotAs("Last step screenshot");
-        Attachments.addVideo();
         Attachments.pageSource();
         Attachments.browserConsoleLogs();
         closeWebDriver();
