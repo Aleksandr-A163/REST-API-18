@@ -12,13 +12,14 @@ public class FakerData {
         // Ensure the base characters for the password
         char lowerCase = faker.regexify("[a-z]").charAt(0);
         char upperCase = faker.regexify("[A-Z]").charAt(0);
+        char oneDigit = faker.regexify("[0-9]").charAt(0);
         char specialChar = faker.regexify("[!@#$%^&*()]").charAt(0);
 
         // Generate the rest of the password
         String remainingChars = faker.internet().password(minLength - 3, maxLength - 3, true, true, true);
 
         // Combine all parts
-        String combined = "" + lowerCase + upperCase + specialChar + remainingChars;
+        String combined = "" + lowerCase + upperCase + + oneDigit + specialChar + remainingChars;
 
         // Shuffle the combined characters to ensure randomness
         List<Character> passwordChars = combined.chars()

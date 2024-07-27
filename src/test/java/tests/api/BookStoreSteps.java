@@ -1,4 +1,4 @@
-package tests.steps;
+package tests.api;
 
 import io.qameta.allure.Step;
 import models.*;

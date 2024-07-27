@@ -1,13 +1,11 @@
 package tests;
 
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
 import models.LoginResponseModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProfilePage;
-import tests.steps.BookStoreSteps;
+import tests.api.BookStoreSteps;
 import helpers.FakerData;
 
 
@@ -20,7 +18,6 @@ public class BooksStoreTests extends TestBase {
     @Test
     @DisplayName("Delete a book from user profile")
     void deleteBookFromProfileBooksListTest() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         BookStoreSteps step = new BookStoreSteps();
         String userName = FakerData.generateUsername();
         String password = FakerData.generatePassword(9, 14);
