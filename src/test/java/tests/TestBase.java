@@ -39,6 +39,7 @@ public class TestBase {
         Attachments.screenshotAs("Last step screenshot");
         Attachments.pageSource();
         Attachments.browserConsoleLogs();
+        Attachments.addVideo();
         closeWebDriver();
     }
 }

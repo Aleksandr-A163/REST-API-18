@@ -1,5 +1,6 @@
 package tests;
 
+import api.ApiSteps;
 import models.LoginResponseModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -17,7 +18,7 @@ public class BooksStoreTests extends TestBase {
     @Test
     @DisplayName("Delete a book from user profile")
     void deleteBookFromProfileBooksListTest() {
-        BookStoreSteps step = new BookStoreSteps();
+        ApiSteps step = new ApiSteps();
         String userName = FakerData.generateUsername();
         String password = FakerData.generatePassword(9, 14);
         String isbn = "9781593275846";

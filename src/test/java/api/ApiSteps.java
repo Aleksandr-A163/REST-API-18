@@ -1,4 +1,4 @@
-package tests;
+package api;
 
 import io.qameta.allure.Step;
 import models.*;
@@ -11,7 +11,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.restassured.RestAssured.given;
 import static specs.RequestResponseSpecs.*;
 
-public class BookStoreSteps {
+public class ApiSteps {
     @Step("Create a new user")
         public void userRegistrationApi(String userName, String password) {
             RegistrationLoginRequestModel userData = new RegistrationLoginRequestModel();
